@@ -69,7 +69,6 @@ void tick_pump_control() {
       break;
     case PUMP_STOPPED:
       pump.target_power = 0; //Stop
-      Serial.println("PUMP_STOPPED");
       digitalWrite(TASK_COMPLETE_PIN, HIGH);
       if(digitalRead(LEG_OBSTRUCTION_PIN)) {
         pump.state = PUMP_ARMED;

@@ -14,7 +14,7 @@ static uint32_t subroutine_timestamp = 0;
 
 void setup() {
   
-  Serial.begin(9600);
+  // Serial.begin(9600); // For trouble shooting
   pinMode(LEG_OBSTRUCTION_PIN, INPUT_PULLUP);
   pinMode(TASK_COMPLETE_PIN, OUTPUT);
   pinMode(LED_BUILTIN, OUTPUT);

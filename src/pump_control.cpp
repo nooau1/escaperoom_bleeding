@@ -69,6 +69,7 @@ void tick_pump_control() {
       break;
     case PUMP_STOPPED:
       pump.target_power = 0; //Stop
+      Serial.println("PUMP_STOPPED");
       digitalWrite(TASK_COMPLETE_PIN, HIGH);
       if(digitalRead(LEG_OBSTRUCTION_PIN)) {
         pump.state = PUMP_ARMED;
@@ -77,8 +78,8 @@ void tick_pump_control() {
     default:
       break;
   }
-  Serial.print(get_latest_pressure_reading());
-  Serial.print(" "); 
+  // Serial.print(get_latest_pressure_reading());
+  // Serial.print(" "); 
 
   if(pump.target_power > pump.current_power){
     pump.current_power += pump.velocity;
@@ -86,6 +87,6 @@ void tick_pump_control() {
     pump.current_power -= pump.velocity;
   }
 
-  Serial.println(map(pump.current_power, 0, 65535, 0, 255));
+  // Serial.println(map(pump.current_power, 0, 65535, 0, 255));
   analogWrite(PUMP_PIN, map(pump.current_power, 0, 65535, 0, 255));
 }

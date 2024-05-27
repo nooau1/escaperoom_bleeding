@@ -3,8 +3,8 @@
 #include "pressure_sensor.h"
 #include "defines.h"
 
-#define PRESSURE_THRESHOLD 80
-#define COAGULATION_TIME 10000
+#define PRESSURE_THRESHOLD 100 
+#define COAGULATION_TIME 5000
 
 static pump_control_data_t pump;
 static uint32_t pump_control_timestamp = 0;

@@ -50,7 +50,7 @@ void tick_pump_control() {
       break;
     case PUMP_FLOW:
       digitalWrite(TASK_COMPLETE_PIN, LOW);
-      pump.target_power = 11000; //Normal flow
+      pump.target_power = 22000; //Normal flow
       if(get_latest_pressure_reading() >= PRESSURE_THRESHOLD){ //If wound is packed
         pump.state = PUMP_HOLDING;
         pump_control_timestamp = millis();
